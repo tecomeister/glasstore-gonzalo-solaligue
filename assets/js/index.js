@@ -1,9 +1,24 @@
 let yourName = document.getElementById('nametoshow');
 
 const greetings = () => {
-    const name = prompt('Ingrese Su Nombre');
+    let name = '';
+
+    name = prompt('Ingrese Su Nombre');
+    while (name === '' || name === ' ' || name === null){
+        name = prompt('Ingrese Su Nombre.');
+    }
+    alert('El nombre ingresado es: '+name);
     
-    yourName.innerText = 'Bienvenido '+name+' a GlasStore!';
+    confirmation(name);
+}
+
+const confirmation = (name) =>{
+    if (confirm('Es correcto el nombre?')){
+        yourName.innerText = 'Bienvenido '+name+' a GlasStore!';
+    }else{
+        greetings();
+    }
+    
 }
 
 greetings();
