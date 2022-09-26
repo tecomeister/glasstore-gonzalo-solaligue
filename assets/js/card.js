@@ -27,14 +27,30 @@ function randomNumbers() {
 }
 
 const cardGenerator = () => {
+    let userName = '';
+    let userSurname = '';
     
-    alert('Para crear su tarjeta debe ingresar unos datos necesarios para la creacion de la misma.');
-    const userName = prompt('Ingrese Su Primer Nombre.');
-    const userSurname = prompt('Ingrese su Apellido.');
+    alert('Para crear su tarjeta debe ingresar su nombre y apellido.');
+    userName = prompt('Ingrese Su Primer Nombre.');
+    while (userName === '' || userName === ' ' || userName === null){
+        userName = prompt('Ingrese Su Primer Nombre.');
+    }
+    userSurname = prompt('Ingrese su Apellido.');
+    while (userSurname === '' || userSurname === ' ' || userSurname === null){
+        userSurname = prompt('Ingrese su Apellido.');
+    }
+    alert('Los datos ingresados son:'+'\nNombre: '+userName+'\nApellido: '+userSurname);
     
-    cardName.innerText = userName+' '+userSurname;
+    confirmation(userName, userSurname);
+}
+
+const confirmation = (userName, userSurname) =>{
+    if (confirm('Son correctos los datos?')){
+        cardName.innerText = userName+' '+userSurname;
+    }else{
+        cardGenerator();
+    }
 }
 
 randomNumbers();
 cardGenerator();
-
