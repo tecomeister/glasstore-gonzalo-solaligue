@@ -1,24 +1,11 @@
-let yourName = document.getElementById('nametoshow');
+let greetings = document.getElementById('nametoshow');
 
-const greetings = () => {
-    let name = '';
-
-    name = prompt('Ingrese Su Nombre');
-    while (name === '' || name === ' ' || name === null){
-        name = prompt('Ingrese Su Nombre.');
-    }
-    alert('El nombre ingresado es: '+name);
-    
-    confirmation(name);
-}
-
-const confirmation = (name) =>{
-    if (confirm('Es correcto el nombre?')){
-        yourName.innerText = 'Bienvenido '+name+' a GlasStore!';
+const hero = () =>{
+    if(localStorage.getItem('username') === null || localStorage.getItem('username') === '' || localStorage.getItem('username') === ' '){
     }else{
-        greetings();
+        let name = localStorage.getItem('username');
+        greetings.innerText = 'Bienvenido '+name+' a GlasStore!';
     }
-    
 }
 
-greetings();
+hero();

@@ -1,11 +1,27 @@
 let cardName = document.getElementById('name');
 let cardNumber = document.getElementById('numbers');
+let cardname = document.getElementById('cardname');
+
+const cardCheck = () => {
+    let name = localStorage.getItem('username');
+
+    if(localStorage.getItem('username') === null || localStorage.getItem('username') === '' || localStorage.getItem('username') === ' '){
+        modal.classList.add('modal--show');
+        document.getElementById('closemodalbtn').hidden = true;
+        randomNumbers();
+    }else if (localStorage.getItem('cardnum') === null || localStorage.getItem('cardnum') === '' || localStorage.getItem('cardnum') === ' '){
+        randomNumbers();
+    }else{
+        cardname.innerText = name;
+        cardNumber.innerText =localStorage.getItem('cardnum');
+    }
+}
 
 function randomNumbers() {
-    let firstNumbers = 0;
-    let secondNumbers = 0;
-    let fourthNumbers = 0;
-    let thirdNumbers = 0;
+    let firstNumbers = '';
+    let secondNumbers = '';
+    let thirdNumbers = '';
+    let fourthNumbers = '';
     
     min = Math.ceil(4000);
     max = Math.floor(5500);
@@ -22,36 +38,10 @@ function randomNumbers() {
     min3 = Math.ceil(2000);
     max3 = Math.floor(9000);
     fourthNumbers = Math.floor(Math.random() * (max3 - min3) + min3);
-
-    cardNumber.innerText =firstNumbers+' '+secondNumbers+' '+thirdNumbers+' '+fourthNumbers;
-}
-
-const cardGenerator = () => {
-    let userName = '';
-    let userSurname = '';
     
-    alert('Para crear su tarjeta debe ingresar su nombre y apellido.');
-    userName = prompt('Ingrese Su Primer Nombre.');
-    while (userName === '' || userName === ' ' || userName === null){
-        userName = prompt('Ingrese Su Primer Nombre.');
-    }
-    userSurname = prompt('Ingrese su Apellido.');
-    while (userSurname === '' || userSurname === ' ' || userSurname === null){
-        userSurname = prompt('Ingrese su Apellido.');
-    }
-    alert('Los datos ingresados son:'+'\nNombre: '+userName+'\nApellido: '+userSurname);
+    localStorage.setItem('cardnum', firstNumbers+' '+secondNumbers+' '+thirdNumbers+' '+fourthNumbers);
     
-    confirmation(userName, userSurname);
+    cardNumber.innerText =localStorage.getItem('cardnum');
 }
 
-const confirmation = (userName, userSurname) =>{
-    if (confirm('Son correctos los datos?')){
-        cardName.innerText = userName+' '+userSurname;
-    }else{
-        cardGenerator();
-    }
-}
-
-randomNumbers();
-cardGenerator();
-
+cardCheck();

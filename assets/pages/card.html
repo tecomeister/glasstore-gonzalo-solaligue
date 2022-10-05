@@ -15,20 +15,23 @@
             <ul class="header__ul">
                 <li class="header__li"><a href="./buy.html" class="header__li__a">Comprar</a></li>
                 <li class="header__li"><a href="./card.html" class="header__li__a">Tarjeta</a></li>
+                <li class="header__li"><a href="#" class="header__li__a" id="loginheaderbtn">Iniciar Sesion</a></li>
             </ul>
         </nav>
     </header>
     
-    <main class="card">
-        <div class="card__div">
-            <div class="card__inside">
-                <p class="card__brand">GlassCard</p>
-                <p class="card__numbers" id="numbers">XXXX XXXX XXXX XXXX</p>
-                <p class="card__dates">Val From: 09/22 Val To: 09/25</p>
-                <p class="card__name" id="name">John Doe</p>
-                <img src="../resources/code.png" alt="QR Code" class="card__code">
+    <main class="card" id="main">
+        <section>
+            <div class="card__div" id="card">
+                <div class="card__inside">
+                    <p class="card__brand">GlassCard</p>
+                    <p class="card__numbers" id="numbers">XXXX XXXX XXXX XXXX</p>
+                    <p class="card__dates">Val From: 09/22 Val To: 09/25</p>
+                    <p class="card__name" id="cardname">John Doe</p>
+                    <img src="../resources/code.png" alt="QR Code" class="card__code">
+                </div>
             </div>
-        </div>
+        </section>
     </main>
     
     <footer class="footer">
@@ -40,6 +43,7 @@
         
         <a href="mailto:gonzalosolaligue@gmail.com" class="footer__mail">Gonzalo Solaligue @ 2022</a>
     </footer>
+    <script src="../js/login.js"></script>
     <script src="../js/card.js"></script>
 </body>
 </html>

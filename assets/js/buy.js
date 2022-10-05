@@ -2,19 +2,59 @@ const container = document.getElementById('container');
 
 const showInventory = () => {
     products.forEach(product => {
-        const div = document.createElement('div');
-        div.classList.add('buy__div__container');
+        const buyContainerDiv = document.createElement('div');
+        const buyImg = document.createElement('img');
+        const buyProdName = document.createElement('h2');
+        const buyProdPlat = document.createElement('p');
+        const buyProdPrice = document.createElement('h3');
+        const buyProdButton = document.createElement('button');
         
-        div.innerHTML += `
-            <img src="${product.img}" alt="Imagen" class="buy__div__img">
-            <a href="../pages/article.html" class="buy__div__title">${product.name}</a>
-            <p class="buy__div__platform">${product.platform}</p>
-            <h3 class="buy__div__price">$ ${product.price}</h3>
-            `;
+        buyContainerDiv.classList.add('buy__div__container');
+        buyImg.classList.add('buy__div__img');
+        buyProdName.classList.add('buy__div__title');
+        buyProdPlat.classList.add('buy__div__platform');
+        buyProdPrice.classList.add('buy__div__price');
+        buyProdButton.classList.add('buy__div__button');
         
-        container.appendChild(div);
+        buyProdButton.setAttribute('id', 'buybutton');
+        
+        buyImg.src += `${product.img}`;
+        
+        buyProdName.innerText += `${product.name}`;
+        buyProdPlat.innerText += `${product.platform}`;
+        buyProdPrice.innerText += `${product.price}`;
+        buyProdButton.innerText += 'Comprar!';
+        
+        
+        container.appendChild(buyContainerDiv);
+        buyContainerDiv.appendChild(buyImg);
+        buyContainerDiv.appendChild(buyProdName);
+        buyContainerDiv.appendChild(buyProdPlat);
+        buyContainerDiv.appendChild(buyProdPrice);
+        buyContainerDiv.appendChild(buyProdButton);
+
     })
-}
+} 
+
+document.getElementById('loginheaderbtn').addEventListener('click', (e) =>{
+    e.preventDefault();
+    document.getElementById('container').style.display = "none";
+})
+
+document.getElementById('closemodalbtn').addEventListener('click', (e) =>{
+    e.preventDefault();
+    document.getElementById('container').style.display = "flex";
+})
+
+document.getElementById('modalsubmit').addEventListener('click', (e) =>{
+    e.preventDefault();
+    
+    if (document.getElementById('modalerrortxt').innerText === 'Nombre de usuario invalido'){
+        document.getElementById('container').style.display = "none";
+    }else{
+        document.getElementById('container').style.display = "flex";
+    }
+})
 
 showInventory();
 
