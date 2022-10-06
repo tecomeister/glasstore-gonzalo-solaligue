@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./assets/resources/favicon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="shortcut icon" href="./public/images/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./public/css/style.css">
     <title>GlasStore - Gonzalo Solaligue</title>
 </head>
 <body>
@@ -13,10 +13,10 @@
         <a href="./index.html" class="header__logo">GlasStore</a>
         <nav class="header__nav">
             <ul class="header__ul">
-                <li class="header__li"><a href="./assets/pages/buy.html" class="header__li__a">Comprar</a></li>
-                <li class="header__li"><a href="./assets/pages/card.html" class="header__li__a">Tarjeta</a></li>
+                <li class="header__li"><a href="./public/pages/buy.html" class="header__li__a">Comprar</a></li>
+                <li class="header__li"><a href="./public/pages/card.html" class="header__li__a">Tarjeta</a></li>
                 <li class="header__li"><a href="#" class="header__li__a" id="loginheaderbtn">Iniciar Sesion</a></li>
-                <li class="header__li__container" id="cartbtnheader"><img src="./assets/resources/cart.svg" alt="Carrito" class="header__li__img" id="cartheader"><a href="#" id="cartcounterheader" class="header__li__counter">0</a></li>
+                <li class="header__li__container" id="cartbtnheader"><img src="./public/images/cart.svg" alt="Carrito" class="header__li__img" id="cartheader"><a href="#" id="cartcounterheader" class="header__li__counter">0</a></li>
             </ul>
         </nav>
     </header>
@@ -50,17 +50,19 @@
     <footer class="footer" id="footer">
         <ul class="footer__ul">
             <li><a href="./index.html" class="footer__a">Inicio</a></li>
-            <li><a href="./assets/pages/buy.html" class="footer__a">Comprar</a></li>
-            <li><a href="./assets/pages/card.html" class="footer__a">Tarjeta</a></li>
+            <li><a href="./public/pages/buy.html" class="footer__a">Comprar</a></li>
+            <li><a href="./public/pages/card.html" class="footer__a">Tarjeta</a></li>
         </ul>
         
         <a href="mailto:gonzalosolaligue@gmail.com" class="footer__mail">Gonzalo Solaligue @ 2022</a>
     </footer>
     
-    <script src="./assets/js/login.js" type="module"></script>
-    <script src="./assets/js/index.js" type="module"></script>
-    <script src="./assets/js/modal.js" type="module"></script>
-    <script src="./assets/js/cartActions.js" type="module"></script>
-    <script src="./assets/js/cartUpdater.js" type="module"></script>
+    <script src="./src/components/login/login.js" type="module"></script>
+    <script src="./src/components/home/home.js" type="module"></script>
+    <script src="./src/components/cart/cartModal.js" type="module"></script>
+    <script src="./src/components/cart/cartActions.js" type="module"></script>
+    <script src="./src/components/cart/cartUpdater.js" type="module"></script>
+    <script src="./src/components/cart/storage.js" type="module"></script>
+    <script src="./src/controllers/cartController.js" type="module"></script>
 </body>
 </html>
