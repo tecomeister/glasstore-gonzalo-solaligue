@@ -1,3 +1,6 @@
+import { buyRepeatValidation } from "./cartactions.js";
+import { products } from "./stock.js";
+
 const container = document.getElementById('container');
 
 const showInventory = () => {
@@ -16,14 +19,14 @@ const showInventory = () => {
         buyProdPrice.classList.add('buy__div__price');
         buyProdButton.classList.add('buy__div__button');
         
-        buyProdButton.setAttribute('id', 'buybutton');
+        buyProdButton.setAttribute('id', 'button'+product.id);
         
         buyImg.src += `${product.img}`;
         
         buyProdName.innerText += `${product.name}`;
         buyProdPlat.innerText += `${product.platform}`;
         buyProdPrice.innerText += `${product.price}`;
-        buyProdButton.innerText += 'Comprar!';
+        buyProdButton.innerText += 'Agregar al Carrito';
         
         
         container.appendChild(buyContainerDiv);
@@ -32,7 +35,11 @@ const showInventory = () => {
         buyContainerDiv.appendChild(buyProdPlat);
         buyContainerDiv.appendChild(buyProdPrice);
         buyContainerDiv.appendChild(buyProdButton);
-
+        
+        const buyButton = document.getElementById(`button${product.id}`);
+        buyButton.addEventListener('click', () =>{
+            buyRepeatValidation(product.id);
+        })
     })
 } 
 
@@ -57,5 +64,3 @@ document.getElementById('modalsubmit').addEventListener('click', (e) =>{
 })
 
 showInventory();
-
-

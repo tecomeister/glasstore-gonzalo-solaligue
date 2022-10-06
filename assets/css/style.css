@@ -56,18 +56,46 @@ header{
 }
 
 .header__nav{
-    grid-column: 4;
+    grid-column: 3/5;
 }
 
 .header__ul{
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: right;
+    padding-right: 10px;
 }
 
 .header__li{
-padding: 5px;
+    padding: 5px;
 }
+
+.header__li__container{
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header__li__container:hover{
+    background: rgba( 255, 255, 255, 0.15 );
+    box-shadow: 0 8px 32px 0 rgb(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.header__li__img{
+    height: 20px;
+    width: 20px;
+}
+
+.header__li__counter{
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #00000075;
+    transition: background .3s;
+}
+
+
 
 .header__li__a{
     padding: 5px;
@@ -309,9 +337,9 @@ padding: 5px;
     grid-row: 1;
 }
 
-/* Modal */
+/*Login Modal */
 
-.modal{
+.lmodal{
     display: flex;
     position: fixed;
     top: 0;
@@ -326,12 +354,12 @@ padding: 5px;
     pointer-events: none;
 }
 
-.modal--show{
+.lmodal--show{
     opacity: 1;
     pointer-events: unset;
 }
 
-.modal__container{
+.lmodal__container{
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
@@ -348,32 +376,32 @@ padding: 5px;
     border-radius: 10px;
 }
 
-.modal__form{
+.lmodal__form{
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
 }
 
-.modal__title{
+.lmodal__title{
     font-size: x-large;
     color: #ffffff;
     margin-bottom: 30px;
 }
 
-.modal__desc{
+.lmodal__desc{
     font-size: large;
     color: #ffffff;
     margin-bottom: 5px;
 }
 
-.modal__error{
+.lmodal__error{
     font-size: large;
     color: crimson;
     margin-bottom: 5px;
 }
 
-.modal__input{
+.lmodal__input{
     font-family: 'Ubuntu', sans-serif;
     padding: 5px;
     color: #ffffff;
@@ -386,7 +414,7 @@ padding: 5px;
     margin-bottom: 15px;
 }
 
-.modal__submit{
+.lmodal__submit{
     font-family: 'Ubuntu', sans-serif;
     font-size: medium;
     padding: 5px;
@@ -401,12 +429,12 @@ padding: 5px;
     transition: background .3s;
     margin-top: 5px;
 }
-.modal__submit:hover{
+.lmodal__submit:hover{
     background: rgba( 255, 255, 255, 0.35 );
     box-shadow: 0 8px 32px 0 rgb(0, 0, 0, 0.2);
 }
 
-.modal__close{
+.lmodal__close{
     font-family: 'Ubuntu', sans-serif;
     font-size: small;
     padding: 5px;
@@ -420,7 +448,93 @@ padding: 5px;
     transition: background .3s;
 }
 
-.modal__close:hover{
+.lmodal__close:hover{
+    background: rgba( 255, 255, 255, 0.35 );
+    box-shadow: 0 8px 32px 0 rgb(0, 0, 0, 0.2);
+}
+
+/*Cart Modal */
+
+.cmodal{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../resources/bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.cmodal--show{
+    opacity: 1;
+    pointer-events: unset;
+}
+
+.cmodal__container{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 90%;
+    max-width: 80%;
+    max-height: 90%;
+    padding: 3em 2.5em;
+    background: rgba( 255, 255, 255, 0.15 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+}
+
+.cmodal__cardcontainer{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.cmodal__product{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.cmodal__title{
+    font-size: medium;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.cmodal__desc{
+    font-size: 1.25rem;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.cmodal__button{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.25rem;
+    padding: 5px;
+    color: #ffffff;
+    background: rgba( 255, 255, 255, 0.15 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 5px;
+    border-style: none;
+    margin-bottom: 15px;
+    transition: background .3s;
+    margin-top: 5px;
+}
+.cmodal__button:hover{
     background: rgba( 255, 255, 255, 0.35 );
     box-shadow: 0 8px 32px 0 rgb(0, 0, 0, 0.2);
 }

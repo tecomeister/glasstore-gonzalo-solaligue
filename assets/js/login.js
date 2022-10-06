@@ -3,10 +3,8 @@ const loginHeader = document.getElementById('loginheaderbtn');
 
 const checkIfLoggedIn = () => {
     if(localStorage.getItem('username') != null){
-        loginHeader.innerText = "";
         loginHeader.innerText = "Cerrar Sesion";
     }else if(localStorage.getItem('username') === null){
-        loginHeader.innerText = "";
         loginHeader.innerText = "Iniciar Sesion";
     }
 }
@@ -29,15 +27,15 @@ const createLoginModal = () => {
     modalCloseBtn.setAttribute('id', 'closemodalbtn');
     modalLabelError.setAttribute('id', 'modalerrortxt');
 
-    modalSection.classList.add('modal');
-    modalContainer.classList.add('modal__container');
-    modalTitle.classList.add('modal__title');
-    modalForm.classList.add('modal__form');
-    modalLabelUsr.classList.add('modal__desc');
-    modalInputUsr.classList.add('modal__input');
-    modalLabelError.classList.add('modal__error');
-    modalSubmitBtn.classList.add('modal__submit');
-    modalCloseBtn.classList.add('modal__close');
+    modalSection.classList.add('lmodal');
+    modalContainer.classList.add('lmodal__container');
+    modalTitle.classList.add('lmodal__title');
+    modalForm.classList.add('lmodal__form');
+    modalLabelUsr.classList.add('lmodal__desc');
+    modalInputUsr.classList.add('lmodal__input');
+    modalLabelError.classList.add('lmodal__error');
+    modalSubmitBtn.classList.add('lmodal__submit');
+    modalCloseBtn.classList.add('lmodal__close');
 
     modalTitle.innerText += "Iniciar Sesion";
     modalLabelUsr.innerText += "Nombre de Usuario:";
@@ -62,6 +60,8 @@ function login () {
     const modalSubmit = document.getElementById('modalsubmit');
     const closeModal = document.getElementById('closemodalbtn');
     const errorSubmit = document.getElementById('modalerrortxt');
+    const header = document.getElementById('header');
+    const footer = document.getElementById('footer');
     let user = document.getElementById('loginusername');
 
     if(loginHeader.innerText === "Cerrar Sesion"){
@@ -74,13 +74,17 @@ function login () {
         }else if(loginHeader.innerText === "Iniciar Sesion"){
             loginHeader.addEventListener('click', (e) =>{
                 e.preventDefault();
-                modal.classList.add('modal--show');
+                modal.classList.add('lmodal--show');
+                header.style.display = "none";
+                footer.style.display = "none";
             })
     }
     
     closeModal.addEventListener('click', (e) =>{
         e.preventDefault();
-        modal.classList.remove('modal--show');
+        modal.classList.remove('lmodal--show');
+        header.style.display = "grid";
+        footer.style.display = "block";
         if(errorSubmit != ''){
             errorSubmit.hidden = true;
         }else{
@@ -96,11 +100,15 @@ function login () {
             errorSubmit.innerText = ('Nombre de usuario invalido');
         }else if (errorSubmit !=''){
             errorSubmit.hidden = true;
-            modal.classList.remove('modal--show');
+            modal.classList.remove('lmodal--show');
+            header.style.display = "grid";
+            footer.style.display = "block";
             user.value = '';
             location.reload(true);
         }else{
-            modal.classList.remove('modal--show');
+            modal.classList.remove('lmodal--show');
+            header.style.display = "grid";
+            footer.style.display = "block";
             user.value = '';
             location.reload(true);
         }
