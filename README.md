@@ -1,4 +1,6 @@
 # GlasStore
 
-Proyecto para la entrega de DOM
-para el curso de JS de CoderHouse
+Proyecto de E-Commerce para
+el Curso de CoderHouse
+
+Comision N°3402
