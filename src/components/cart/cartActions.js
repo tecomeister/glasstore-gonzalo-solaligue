@@ -25,7 +25,7 @@ const buyRepeatValidation = (productId) =>{
 const addToCart = (productId) =>{
     const cartContainer = document.getElementById('cartitemcontainer');
     const product = products.find(product => product.id === productId);
-    
+    const {id, name, price, quantity} = product;
     cart.push(product);
     
     const cartDiv = document.createElement('div');
@@ -40,13 +40,13 @@ const addToCart = (productId) =>{
     productQuantity.classList.add('cmodal__desc');
     productEraseButton.classList.add('cmodal__erasebutton');
 
-    productQuantity.setAttribute('id', 'quantity'+product.id);
-    productEraseButton.setAttribute('id', 'erase'+product.id);
-    productEraseButton.setAttribute('value', product.id);
+    productQuantity.setAttribute('id', 'quantity'+id);
+    productEraseButton.setAttribute('id', 'erase'+id);
+    productEraseButton.setAttribute('value', id);
 
-    productName.innerText += product.name;
-    productPrice.innerText += `Precio: ${product.price}`;
-    productQuantity.innerText += `Cantidad: ${product.quantity}`;
+    productName.innerText += name;
+    productPrice.innerText += 'Precio: '+price;
+    productQuantity.innerText += 'Cantidad: '+quantity;
     productEraseButton.innerText += "Eliminar Producto";
     
     cartContainer.appendChild(cartDiv);
@@ -64,6 +64,7 @@ const getCart = (cart) =>{
     cartContainer.innerHTML = '';
     
     cart.forEach(product => {
+        const {id, name, price, quantity} = product;
         const cartDiv = document.createElement('div');
         const productName = document.createElement('p');
         const productPrice = document.createElement('p');
@@ -76,13 +77,13 @@ const getCart = (cart) =>{
         productQuantity.classList.add('cmodal__desc');
         productEraseButton.classList.add('cmodal__erasebutton');
         
-        productQuantity.setAttribute('id', 'quantity'+product.id);
-        productEraseButton.setAttribute('id', 'erase'+product.id);
-        productEraseButton.setAttribute('value', product.id);
+        productQuantity.setAttribute('id', 'quantity'+id);
+        productEraseButton.setAttribute('id', 'erase'+id);
+        productEraseButton.setAttribute('value', id);
         
-        productName.innerText += product.name;
-        productPrice.innerText += `Precio: ${product.price}`;
-        productQuantity.innerText += `Cantidad: ${product.quantity}`;
+        productName.innerText += name;
+        productPrice.innerText += 'Precio: '+price;
+        productQuantity.innerText += 'Cantidad: '+quantity;
         productEraseButton.innerText += "Eliminar Producto";
         
         cartContainer.appendChild(cartDiv);
@@ -99,6 +100,9 @@ const eraseCartProduct = (productId)  =>{
     
     updateCartTotal(updatedCart);
     getCart(updatedCart);
+    if(localStorage.getItem('cart').length > 0){
+        document.getElementById('carttotaltxt').innerText = "Tu carrito está vacio!"
+    }
 }
 
 export{ addToCart, buyRepeatValidation, getCart, eraseCartProduct};

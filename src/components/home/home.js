@@ -52,6 +52,13 @@ const showPaidAds = () => {
             const buyButton = document.getElementById("button"+id);
             buyButton.addEventListener('click', () =>{
                 buyRepeatValidation(id);
+                Toastify({
+                    text: "Producto Agregado al Carrito!",
+                    duration: 2000,
+                    className: "toastify",
+                    gravity: "top",
+                    position: "center"
+                    }).showToast();
             })
         }
     })

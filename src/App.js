@@ -40,6 +40,13 @@ const showInventory = () => {
         const buyButton = document.getElementById("button"+id);
         buyButton.addEventListener('click', () =>{
             buyRepeatValidation(id);
+            Toastify({
+                text: "Producto Agregado al Carrito!",
+                duration: 2000,
+                gravity: "top",
+                position: "center",
+                className: "toastify",
+                }).showToast();
         })
     })
 } 

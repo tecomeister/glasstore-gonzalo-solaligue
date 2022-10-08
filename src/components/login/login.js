@@ -61,15 +61,25 @@ function login () {
     const closeModal = document.getElementById('closemodalbtn');
     const errorSubmit = document.getElementById('modalerrortxt');
     const header = document.getElementById('header');
+    const main = document.getElementById('main');
     const footer = document.getElementById('footer');
     let user = document.getElementById('loginusername');
 
     if(loginHeader.innerText === "Cerrar Sesion"){
         loginHeader.addEventListener('click', (e) =>{
             e.preventDefault();
-            localStorage.removeItem('username');
-            localStorage.removeItem('cardnum');
-            location.reload(true);
+            Swal.fire({
+                icon: 'success',
+                title: 'Sesion Cerrada!',
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    localStorage.removeItem('username');
+                    localStorage.removeItem('cardnum');
+                    location.reload(true);
+                }
+            });
         })
         }else if(loginHeader.innerText === "Iniciar Sesion"){
             loginHeader.addEventListener('click', (e) =>{
@@ -95,18 +105,36 @@ function login () {
             errorSubmit.hidden = false;
             errorSubmit.innerText = ('Nombre de usuario invalido');
         }else if (errorSubmit !=''){
-            errorSubmit.hidden = true;
-            modal.classList.remove('lmodal--show');
-            header.style.display = "grid";
-            footer.style.display = "block";
-            user.value = '';
-            location.reload(true);
+            Swal.fire({
+                icon: 'success',
+                title: 'Sesion Iniciada!',
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    errorSubmit.hidden = true;
+                    modal.classList.remove('lmodal--show');
+                    header.style.display = "grid";
+                    footer.style.display = "block";
+                    user.value = '';
+                    location.reload(true);
+                }
+            });
         }else{
-            modal.classList.remove('lmodal--show');
-            header.style.display = "grid";
-            footer.style.display = "block";
-            user.value = '';
-            location.reload(true);
+            Swal.fire({
+                icon: 'success',
+                title: 'Sesion Iniciada!',
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    modal.classList.remove('lmodal--show');
+                    header.style.display = "grid";
+                    footer.style.display = "block";
+                    user.value = '';
+                    location.reload(true);
+                }
+            });
         }
     })
 }
