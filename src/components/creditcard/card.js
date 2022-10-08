@@ -1,8 +1,10 @@
 let cardName = document.getElementById('name');
-let cardNumber = document.getElementById('numbers');
+let cardNums = document.getElementById('numbers');
 let cardname = document.getElementById('cardname');
 const header = document.getElementById('header');
 const footer = document.getElementById('footer');
+
+const cardNumbers = [];
 
 const cardCheck = () => {
     let name = localStorage.getItem('username');
@@ -17,7 +19,7 @@ const cardCheck = () => {
         randomNumbers();
     }else{
         cardname.innerText = name;
-        cardNumber.innerText =localStorage.getItem('cardnum');
+        cardNums.innerText =localStorage.getItem('cardnum');
     }
 }
 
@@ -43,9 +45,16 @@ function randomNumbers() {
     let max3 = Math.floor(9000);
     fourthNumbers = Math.floor(Math.random() * (max3 - min3) + min3);
     
-    localStorage.setItem('cardnum', firstNumbers+' '+secondNumbers+' '+thirdNumbers+' '+fourthNumbers);
+    cardNumbers.push(firstNumbers);
+    cardNumbers.push(secondNumbers);
+    cardNumbers.push(thirdNumbers);
+    cardNumbers.push(fourthNumbers);
+
+    const cardCompleteNumbers = [...cardNumbers].join(' ');
+
+    localStorage.setItem('cardnum', cardCompleteNumbers);
     
-    cardNumber.innerText =localStorage.getItem('cardnum');
+    cardNums.innerText =localStorage.getItem('cardnum');
 }
 
 cardCheck();

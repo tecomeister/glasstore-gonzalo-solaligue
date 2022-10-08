@@ -1,9 +1,11 @@
+import { products } from "./components/products/stock.js";
 import { buyRepeatValidation } from "./components/cart/cartActions.js";
 
 const container = document.getElementById('container');
 
-const showInventory = (products) => {
+const showInventory = () => {
     products.forEach(product => {
+        const {id, img: boxart, name, platform, price} = product;
         const buyContainerDiv = document.createElement('div');
         const buyImg = document.createElement('img');
         const buyProdName = document.createElement('h2');
@@ -18,13 +20,13 @@ const showInventory = (products) => {
         buyProdPrice.classList.add('buy__div__price');
         buyProdButton.classList.add('buy__div__button');
         
-        buyProdButton.setAttribute('id', 'button'+product.id);
+        buyProdButton.setAttribute('id', 'button'+id);
         
-        buyImg.src += `${product.img}`;
+        buyImg.src += boxart;
         
-        buyProdName.innerText += `${product.name}`;
-        buyProdPlat.innerText += `${product.platform}`;
-        buyProdPrice.innerText += `${product.price}`;
+        buyProdName.innerText += name;
+        buyProdPlat.innerText += platform;
+        buyProdPrice.innerText += price;
         buyProdButton.innerText += 'Agregar al Carrito';
         
         
@@ -35,9 +37,9 @@ const showInventory = (products) => {
         buyContainerDiv.appendChild(buyProdPrice);
         buyContainerDiv.appendChild(buyProdButton);
         
-        const buyButton = document.getElementById(`button${product.id}`);
+        const buyButton = document.getElementById("button"+id);
         buyButton.addEventListener('click', () =>{
-            buyRepeatValidation(product.id);
+            buyRepeatValidation(id);
         })
     })
 } 
@@ -55,11 +57,7 @@ document.getElementById('closemodalbtn').addEventListener('click', (e) =>{
 document.getElementById('modalsubmit').addEventListener('click', (e) =>{
     e.preventDefault();
     
-    if (document.getElementById('modalerrortxt').innerText === 'Nombre de usuario invalido'){
-        document.getElementById('container').style.display = "none";
-    }else{
-        document.getElementById('container').style.display = "flex";
-    }
+    document.getElementById('modalerrortxt').innerText === 'Nombre de usuario invalido' ? document.getElementById('container').style.display = "none" : document.getElementById('container').style.display = "flex";
 })
 
 export { showInventory };

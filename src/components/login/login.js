@@ -85,11 +85,7 @@ function login () {
         modal.classList.remove('lmodal--show');
         header.style.display = "grid";
         footer.style.display = "block";
-        if(errorSubmit != ''){
-            errorSubmit.hidden = true;
-        }else{
-            errorSubmit.hidden = false;
-        }
+        errorSubmit != '' ? errorSubmit.hidden = true : errorSubmit.hidden = false;
     })
     
     modalSubmit.addEventListener('click', (e) =>{

@@ -6,7 +6,8 @@ const products = [
         platform: "Juego PS5",
         price: 15000,
         description: "Death Stranding Para PS5 Nuevo.",
-        quantity: 1
+        quantity: 1,
+        advertisement: false
     },
     {
         id: 2,
@@ -15,7 +16,8 @@ const products = [
         platform: "Juego PS5",
         price: 10000,
         description: "Gran Turismo 7 Para PS5 Nuevo.",
-        quantity: 1
+        quantity: 1,
+        advertisement: true
     },
     {
         id: 3,
@@ -24,7 +26,8 @@ const products = [
         platform: "Juego PS5",
         price: 20000,
         description: "Horizon FW Para PS5 Nuevo.",
-        quantity: 1
+        quantity: 1,
+        advertisement: false
     },
     {
         id: 4,
@@ -33,7 +36,8 @@ const products = [
         platform: "Juego PS5",
         price: 20000,
         description: "GoW Ragnarok Para PS5 Nuevo.",
-        quantity: 1
+        quantity: 1,
+        advertisement: true
     },
     {
         id: 5,
@@ -42,7 +46,8 @@ const products = [
         platform: "Juego PS5",
         price: 50000,
         description: "GoW-R Edicion Jotnar Para PS5 Nuevo.",
-        quantity: 1
+        quantity: 1,
+        advertisement: true
     },
     {
         id: 6,
@@ -51,7 +56,8 @@ const products = [
         platform: "Juego PS5",
         price: 10000,
         description: "R&C Rift Apart Para PS5 Nuevo.",
-        quantity: 1
+        quantity: 1,
+        advertisement: false
     },
     {
         id: 7,
@@ -60,7 +66,8 @@ const products = [
         platform: "Juego PS5",
         price: 7500,
         description: "TLOU Parte 1 Para PS5 Nuevo.",
-        quantity: 1
+        quantity: 1,
+        advertisement: false
     },
     {
         id: 8,
@@ -69,7 +76,8 @@ const products = [
         platform: "Juego PS5",
         price: 10000,
         description: "Tribes of Midgard Para PS5 Nuevo.",
-        quantity: 1
+        quantity: 1,
+        advertisement: false
     },
     {
         id: 9,
@@ -78,7 +86,8 @@ const products = [
         platform: "Consola",
         price: 250000,
         description: "Consola PS5 Nueva",
-        quantity: 1
+        quantity: 1,
+        advertisement: true
     },
     {
         id: 10,
@@ -87,7 +96,8 @@ const products = [
         platform: "Consola",
         price: 300000,
         description: "Consola PS5 Edicion Horizon Nueva.",
-        quantity: 1
+        quantity: 1,
+        advertisement: true
     },
 ]
 
