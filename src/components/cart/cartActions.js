@@ -1,5 +1,5 @@
+import { obtainProducts } from "../products/obtainProducts.js";
 import { updateCartTotal } from "./cartUpdater.js";
-import { products } from "../products/stock.js";
 import { obtainStorageCart } from "./storage.js";
 
 let cart = [];
@@ -22,7 +22,9 @@ const buyRepeatValidation = (productId) =>{
     }
 }
 
-const addToCart = (productId) =>{
+const addToCart = async (productId) =>{
+    const products = await obtainProducts();
+
     const cartContainer = document.getElementById('cartitemcontainer');
     const product = products.find(product => product.id === productId);
     const {id, name, price, quantity} = product;
@@ -62,7 +64,7 @@ const getCart = (cart) =>{
     const cartContainer = document.getElementById('cartitemcontainer');
     
     cartContainer.innerHTML = '';
-    
+
     cart.forEach(product => {
         const {id, name, price, quantity} = product;
         const cartDiv = document.createElement('div');
@@ -100,9 +102,6 @@ const eraseCartProduct = (productId)  =>{
     
     updateCartTotal(updatedCart);
     getCart(updatedCart);
-    if(localStorage.getItem('cart').length > 0){
-        document.getElementById('carttotaltxt').innerText = "Tu carrito está vacio!"
-    }
 }
 
 export{ addToCart, buyRepeatValidation, getCart, eraseCartProduct};

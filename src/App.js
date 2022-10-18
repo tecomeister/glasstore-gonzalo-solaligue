@@ -1,9 +1,11 @@
-import { products } from "./components/products/stock.js";
 import { buyRepeatValidation } from "./components/cart/cartActions.js";
+import { obtainProducts } from "./components/products/obtainProducts.js";
 
-const container = document.getElementById('container');
+const showInventory = async () => {
+    const container = document.getElementById('container');
 
-const showInventory = () => {
+    const products = await obtainProducts();
+
     products.forEach(product => {
         const {id, img: boxart, name, platform, price} = product;
         const buyContainerDiv = document.createElement('div');

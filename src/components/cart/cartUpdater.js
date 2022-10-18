@@ -11,9 +11,15 @@ const updateCartTotal = (cart) => {
 const showTotalOnCart = (totalQuantity, totalBuyPrice) =>{
     const cartCounter = document.getElementById('cartcounterheader');
     const totalPrice = document.getElementById('carttotaltxt');
+    const buyCart = document.getElementById('cartbuybtn');
     
-    cartCounter.innerText = totalQuantity;
-    totalPrice.innerText = "Total: "+totalBuyPrice;
+    if (totalBuyPrice <= 0){
+        totalPrice.innerText = "Tu carrito está vacio!";
+    }else{
+        cartCounter.innerText = totalQuantity;
+        totalPrice.innerText = "Total: "+totalBuyPrice;
+        buyCart.classList.add('cmodal__button__buy__show');
+    }
 }
 
 export {updateCartTotal};

@@ -1,5 +1,6 @@
-import { products } from "../products/stock.js";
+//import { products } from "../products/stock.js";
 import { buyRepeatValidation } from "../cart/cartActions.js";
+import { obtainProducts } from "../products/obtainProducts.js";
 
 let greetings = document.getElementById('nametoshow');
 
@@ -13,7 +14,9 @@ const hero = () =>{
 
 const container = document.getElementById('container');
 
-const showPaidAds = () => {
+const showPaidAds = async () => {
+    const products = await obtainProducts();
+    
     products.forEach(product  => {
         const {id, img: boxart, name, platform, price, advertisement: ad} = product;
 

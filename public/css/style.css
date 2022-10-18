@@ -559,6 +559,34 @@ header{
     box-shadow: 2px 2px 3px rgba( 31, 38, 135, 1 );
 }
 
+.cmodal__button__buy{
+    opacity: 0;
+    pointer-events: none;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 5px;
+    color: #000000;
+    background: rgba( 255, 255, 255, 0.5 );
+    box-shadow: 2px 2px 3px rgba( 31, 38, 135, 0.5 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 5px;
+    border-style: none;
+    margin-bottom: 15px;
+    transition: background .3s;
+    margin-top: 5px;
+}
+.cmodal__button__buy:hover{
+    background: rgba( 255, 255, 255, 0.5 );
+    box-shadow: 2px 2px 3px rgba( 31, 38, 135, 1 );
+}
+
+.cmodal__button__buy__show{
+    opacity: 1;
+    pointer-events: unset;
+}
+
 .cmodal__erasebutton{
     font-family: 'Ubuntu', sans-serif;
     font-size: 1.25rem;
