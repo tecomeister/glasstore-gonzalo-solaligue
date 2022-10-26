@@ -1,0 +1,100 @@
+.card{
+    @include flex-center;
+    margin-top: auto;
+    
+    &__div{
+        display: flex;
+        flex-direction: column;
+        width: 350px;
+        height: 200px;
+        padding: 20px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        color: map-get($colors , primary);
+        background: rgba( 255, 255, 255, 0.15 );
+        box-shadow: map-get($shadows , shadowcartcontainer);
+        backdrop-filter: blur( 4px );
+        -webkit-backdrop-filter: blur( 4px );
+        border-radius: 10px;
+    }
+    
+    &__inside{
+        display: grid;
+        width: 325px;
+        height: 175px;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 5fr 1fr;
+    }
+    
+    &__brand{
+        grid-column: 1;
+        grid-row: 1;
+        font-size: large;
+    }
+    
+    &__numbers{
+        grid-column: 1;
+        grid-row: 3;
+        font-size: medium;
+    }
+    
+    &__dates{
+        grid-column: 1;
+        grid-row: 4;
+        font-size: small;
+    }
+    
+    &__name{
+        grid-column: 1;
+        grid-row: 5;
+        font-size: medium;
+    }
+    
+    &__code{
+        width: 75px;
+        height: 75px;
+        grid-column: 2;
+        grid-row: 1;
+    }
+}
+
+.card--hide{
+    display: none;
+}
+
+@media only screen and (max-width: 480px) {
+
+    .card__div{
+        width: 300px;
+        height: 150px;
+    }
+
+    .card__inside{
+        display: grid;
+        width: 275px;
+        height: 125px;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 5fr 1fr;
+    }
+
+    .card__brand{
+        font-size: medium;
+    }
+    
+    .card__numbers{
+        font-size: small;
+    }
+    
+    .card__dates{
+        font-size: x-small;
+    }
+    
+    .card__name{
+        font-size: small;
+    }
+
+    .card__code{
+        width: 50px;
+        height: 50px;
+    }
+}

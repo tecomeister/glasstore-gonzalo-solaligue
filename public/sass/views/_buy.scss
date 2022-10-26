@@ -1,0 +1,69 @@
+.buy{
+    @include flex-center;
+    margin-top: auto;
+    &__div{
+        @include flex-center;
+        flex-flow: row wrap;
+        padding: 25px;
+        width: 80vw;
+        text-align: center;
+        color: map-get($colors , primary);
+        
+        &__container{
+            @include flex-center;
+            flex-direction: column;
+            height: 275px;
+            width: 200px;
+            background: map-get($colors , secondary);
+            box-shadow: map-get($shadows , shadowbuycontainer);
+            backdrop-filter: blur( 4px );
+            -webkit-backdrop-filter: blur( 4px );
+            border-radius: 10px;
+            text-align: center;
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            transition: all 0.5s;
+        }
+        
+        &__container:hover{
+            transform: translateY(-5px);
+            box-shadow: map-get($shadows , shadowcontainer); 
+        }
+        
+        &__img{
+            padding-top: 5px;
+            height: 150px;
+            width: 150px;
+        }
+        
+        &__title{
+            color: map-get($colors , primary);
+            padding-top: 5px;
+            font-size: medium;
+            font-weight: bold;
+        }
+        
+        &__platform{
+            padding-top: 5px;
+            font-size: small;
+        }
+        
+        &__price{
+            padding-top: 5px;
+            font-size: medium;
+            padding-bottom: 10px;
+        }
+        
+        &__button{
+            @include button;
+            transition: all 0.5s;
+        }
+        
+        &__button:hover{
+            background: #006eff;
+            box-shadow: map-get($shadows , shadowbuybuttonhover);
+        }
+    }
+}

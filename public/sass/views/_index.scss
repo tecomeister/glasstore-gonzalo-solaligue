@@ -1,0 +1,135 @@
+.hero{
+    @include flex-center;
+    flex-direction: column;
+    margin-top: auto;
+
+    &__div{
+        @include flex-center;
+        flex-flow: column wrap;
+        text-align: center;
+        width: max-content;
+        margin: auto;
+        padding: 30px;
+        color: map-get($colors , primary);
+        background: map-get($colors , secondary);
+        box-shadow: map-get($shadows , shadowcartcontainer);
+        backdrop-filter: blur( 4px );
+        -webkit-backdrop-filter: blur( 4px );
+        border-radius: 10px;
+        
+        &__title{
+            font-size: 3.5rem;
+        }
+        
+        &__description{
+            margin-top: 2.5em;
+            font-size: map-get($font-sizes , txtm);
+        }
+    }
+}
+
+.ad__title{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: map-get($font-sizes , txtxl);
+}
+
+.ad__div{
+    @include flex-center;
+    flex-flow: row wrap;
+    text-align: center;
+    color: map-get($colors , primary);
+    margin-bottom: 5px;
+}
+
+.toastify{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: map-get($font-sizes , txts);
+    color: map-get($colors , primary);
+    background: map-get($colors , secondary);
+}
+
+@media only screen and (max-width: 1100px) {
+    .hero{
+        padding-top: 25px;
+        
+        &__div__title{
+            font-size: map-get($font-sizes , txtl);
+        }
+        
+        &__div__description{
+            font-size: map-get($font-sizes , txtxs);
+        }
+    }
+    
+    .ad__title{
+        font-size: map-get($font-sizes , txtl);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .hero{
+        padding-top: 25px;
+        
+        &__div__title{
+            font-size: map-get($font-sizes , txtm);
+        }
+        
+        &__div__description{
+            display: none;
+        }
+    }
+    
+    .ad__title{
+        font-size: map-get($font-sizes , txtm);
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .header__logo{
+        padding-left: 15px;
+        font-size: map-get($font-sizes , txts);
+    }
+    
+    .header__nav{
+        margin-right: 10px;
+    }
+    
+    .header__ul{
+        padding-right: 0px;
+    }
+    
+    .header__li{
+        padding: 2.5px;
+        
+        &__container{
+            padding: 2.5px;
+        }
+        
+        &__img{
+            height: 15px;
+            width: 15px;
+        }
+        
+        &__counter{
+            font-size: map-get($font-sizes , txtxs);
+        }
+        
+        &__a{
+            padding: 5px;
+            font-size: map-get($font-sizes , txtxs);
+        }
+    }
+}
+
+@media only screen and (max-width: 321px) {
+    .header__li__counter{
+        font-size: map-get($font-sizes , txtxxxs);
+    }
+    
+    .header__li__a{
+        font-size: map-get($font-sizes , txtxxxs);
+    }
+}

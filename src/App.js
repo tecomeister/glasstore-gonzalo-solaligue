@@ -28,7 +28,7 @@ const showInventory = async () => {
         
         buyProdName.innerText += name;
         buyProdPlat.innerText += platform;
-        buyProdPrice.innerText += price;
+        buyProdPrice.innerText += "$"+price;
         buyProdButton.innerText += 'Agregar al Carrito';
         
         
@@ -44,7 +44,10 @@ const showInventory = async () => {
             buyRepeatValidation(id);
             Toastify({
                 text: "Producto Agregado al Carrito!",
-                duration: 2000,
+                duration: 750,
+                offset: {
+                    y: 50
+                },
                 gravity: "top",
                 position: "center",
                 className: "toastify",

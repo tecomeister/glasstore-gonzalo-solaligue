@@ -1,0 +1,90 @@
+.lmodal{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 150;
+    
+    &__container{
+        @include flex-center;
+        flex-flow: column wrap;
+        margin: auto;
+        width: 90%;
+        max-width: 600px;
+        max-height: 90%;
+        padding: 3em 2.5em;
+        background: map-get($colors , secondary);
+        box-shadow: map-get($shadows , shadowcartcontainer);
+        backdrop-filter: blur( 4px );
+        -webkit-backdrop-filter: blur( 4px );
+        border-radius: 10px;
+    }
+    
+    &__form{
+        @include flex-center;
+        flex-flow: column wrap;
+    }
+    
+    &__title{
+        font-size: x-large;
+        color: map-get($colors , primary);
+        margin-bottom: 30px;
+    }
+    
+    &__desc{
+        font-size: large;
+        color: map-get($colors , primary);
+        margin-bottom: 5px;
+    }
+    
+    &__error{
+        font-size: large;
+        color: crimson;
+        margin-bottom: 5px;
+    }
+    
+    &__input{
+        font-family: 'Ubuntu', sans-serif;
+        padding: 5px;
+        color: map-get($colors , primary);
+        background: rgba( 255, 255, 255, 0.15 );
+        box-shadow: map-get($shadows , shadowcartcontainer);
+        backdrop-filter: blur( 4px );
+        -webkit-backdrop-filter: blur( 4px );
+        border-radius: 5px;
+        border-style: none;
+        margin-bottom: 15px;
+    }
+    
+    &__submit{
+        @include button;
+        margin-bottom: 15px;
+        transition: background .3s;
+        margin-top: 5px;
+        transition: all 0.5s;
+    }
+    &__submit:hover{
+        background: #006eff;
+        box-shadow: map-get($shadows , shadowbuybuttonhover);
+    }
+    
+    &__close{
+        @include button;
+        transition: all 0.5s;
+    }
+    
+    &__close:hover{
+        background: #006eff;
+        box-shadow: map-get($shadows , shadowbuybuttonhover);
+    }
+}
+
+.lmodal--show{
+    opacity: 1;
+    pointer-events: unset;
+}
+

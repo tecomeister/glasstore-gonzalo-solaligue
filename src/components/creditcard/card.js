@@ -2,6 +2,7 @@ let cardName = document.getElementById('name');
 let cardNums = document.getElementById('numbers');
 let cardname = document.getElementById('cardname');
 const header = document.getElementById('header');
+const card = document.getElementById('card');
 const footer = document.getElementById('footer');
 
 const cardNumbers = [];
@@ -12,6 +13,7 @@ const cardCheck = () => {
     if(localStorage.getItem('username') === null || localStorage.getItem('username') === '' || localStorage.getItem('username') === ' '){
         modal.classList.add('lmodal--show');
         header.style.display = "none";
+        card.style.display = "none";
         footer.style.display = "none";
         document.getElementById('closemodalbtn').hidden = true;
         randomNumbers();
@@ -23,7 +25,7 @@ const cardCheck = () => {
     }
 }
 
-function randomNumbers() {
+const randomNumbers = async () => {
     let firstNumbers = '';
     let secondNumbers = '';
     let thirdNumbers = '';

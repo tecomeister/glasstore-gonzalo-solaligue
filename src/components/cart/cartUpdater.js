@@ -15,9 +15,10 @@ const showTotalOnCart = (totalQuantity, totalBuyPrice) =>{
     
     if (totalBuyPrice <= 0){
         totalPrice.innerText = "Tu carrito está vacio!";
+        buyCart.classList.remove('cmodal__button__buy__show');
     }else{
         cartCounter.innerText = totalQuantity;
-        totalPrice.innerText = "Total: "+totalBuyPrice;
+        totalPrice.innerText = "Total: $"+totalBuyPrice;
         buyCart.classList.add('cmodal__button__buy__show');
     }
 }

@@ -1,4 +1,3 @@
-//import { products } from "../products/stock.js";
 import { buyRepeatValidation } from "../cart/cartActions.js";
 import { obtainProducts } from "../products/obtainProducts.js";
 
@@ -57,10 +56,13 @@ const showPaidAds = async () => {
                 buyRepeatValidation(id);
                 Toastify({
                     text: "Producto Agregado al Carrito!",
-                    duration: 2000,
+                    duration: 750,
+                    offset: {
+                        y: 50
+                    },
                     className: "toastify",
+                    position: "center",
                     gravity: "top",
-                    position: "center"
                     }).showToast();
             })
         }

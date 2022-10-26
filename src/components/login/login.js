@@ -9,7 +9,7 @@ const checkIfLoggedIn = () => {
     }
 }
 
-const createLoginModal = () => {
+const createLoginModal = async () => {
     const modalSection = document.createElement('section');
     const modalContainer = document.createElement('div');
     const modalTitle = document.createElement('h2');
@@ -55,7 +55,7 @@ const createLoginModal = () => {
     login();
 }
 
-function login () {
+const login = async () => {
     const modal = document.getElementById('modal');
     const modalSubmit = document.getElementById('modalsubmit');
     const closeModal = document.getElementById('closemodalbtn');
@@ -93,7 +93,7 @@ function login () {
     closeModal.addEventListener('click', (e) =>{
         e.preventDefault();
         modal.classList.remove('lmodal--show');
-        header.style.display = "grid";
+        header.style.display = "flex";
         footer.style.display = "block";
         errorSubmit != '' ? errorSubmit.hidden = true : errorSubmit.hidden = false;
     })
@@ -114,7 +114,7 @@ function login () {
                 if (result.isConfirmed) {
                     errorSubmit.hidden = true;
                     modal.classList.remove('lmodal--show');
-                    header.style.display = "grid";
+                    header.style.display = "flex";
                     footer.style.display = "block";
                     user.value = '';
                     location.reload(true);
@@ -129,7 +129,7 @@ function login () {
             }).then((result) => {
                 if (result.isConfirmed) {
                     modal.classList.remove('lmodal--show');
-                    header.style.display = "grid";
+                    header.style.display = "flex";
                     footer.style.display = "block";
                     user.value = '';
                     location.reload(true);

@@ -46,7 +46,7 @@ cartModalContainer.addEventListener('click', (e) =>{
                 'Borrado Con Exito!',
                 'El articulo fue eliminado correctamente',
                 'success',
-                eraseCartProduct(e.target.value),
+                eraseCartProduct(e.target.value)
             )}
         })
     }
@@ -66,7 +66,7 @@ cartModalContainer.addEventListener('click', (e) =>{
             hideClass: {popup: 'animate__animated animate__fadeOut'},
         }).then((result) => {
             if (result.isConfirmed) {
-            Swal.fire(
+                Swal.fire(
                 'Compra Exitosa!',
                 'La compra se realizo correctamente',
                 'success',

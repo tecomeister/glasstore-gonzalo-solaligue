@@ -1,0 +1,146 @@
+.cmodal{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 100;
+    
+    &__container{
+        @include flex-center;
+        flex-flow: column wrap;
+        margin: auto;
+        width: fit-content;
+        min-width: 250px;
+        height: fit-content;
+        min-height: 200px;
+        padding: 3em 2.5em;
+        background: map-get($colors , secondary);
+        box-shadow: map-get($shadows , shadowcartcontainer);
+        backdrop-filter: blur( 4px );
+        -webkit-backdrop-filter: blur( 4px );
+        border-radius: 10px;
+    }
+    
+    &__cardcontainer{
+        @include flex-center;
+        flex-flow: column wrap;
+    }
+    
+    &__product{
+        display: flex;
+        padding: 5px;
+    }
+    
+    &__title{
+        font-size: medium;
+        color: map-get($colors , primary);
+        margin-bottom: 30px;
+    }
+    
+    &__desc{
+        font-size: map-get($font-sizes , txts);
+        color: map-get($colors , primary);
+        padding-right: 10px;
+    }
+    
+    &__button{
+        @include button;
+        margin-top: 25px;
+        transition: all 0.5s;
+        
+        &__buy{
+            display: none;
+            pointer-events: none;
+            @include button;
+            margin-top: 15px;
+            transition: all 0.5s;
+        }
+        &__buy:hover{
+            background: #006eff;
+        }
+        
+        &__buy__show{
+            display: inline-block;
+            pointer-events: unset;
+        }
+    }
+    
+    &__button:hover{
+        background: #006eff;
+    }
+    
+    &__erasebutton{
+        @include button;
+        transition: all 0.5s;
+        margin-left: 15px;
+    }
+    
+    &__erasebutton:hover{
+        background: #d30000;
+        box-shadow: map-get($shadows , shadowbuybuttonhover);
+    }
+}
+
+.cmodal--show{
+    opacity: 1;
+    pointer-events: unset;
+}
+
+@media only screen and (max-width: 480px) {
+    .cmodal{
+        overflow:auto;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .cmodal__title{
+        font-size: map-get($font-sizes , txtxxs);
+        margin-bottom: 30px;
+    }
+    
+    .cmodal__desc{
+        font-size: map-get($font-sizes , txtxxs);
+        padding-right: 10px;
+    }
+    
+    .cmodal__button{
+        font-size: map-get($font-sizes , txtxxs);
+        
+        &__buy{
+            font-size: map-get($font-sizes , txtxxs);
+        }
+    }
+    
+    .cmodal__erasebutton{
+        font-size: map-get($font-sizes , txtxxs);
+    }
+}
+
+@media only screen and (max-width: 321px) {
+    .cmodal__title{
+        font-size: map-get($font-sizes , txtxxxs);
+        margin-bottom: 30px;
+    }
+    
+    .cmodal__desc{
+        font-size: map-get($font-sizes , txtxxxs);
+        padding-right: 10px;
+    }
+    
+    .cmodal__button{
+        font-size: map-get($font-sizes , txtxxxs);
+        
+        &__buy{
+            font-size: map-get($font-sizes , txtxxxs);
+        }
+    }
+    
+    .cmodal__erasebutton{
+        font-size: map-get($font-sizes , txtxxxs);
+    }
+}

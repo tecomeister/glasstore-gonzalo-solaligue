@@ -1,0 +1,25 @@
+$colors:(
+    "primary": #000000,
+    "secondary": #ffffff,
+    "blues": #4696ff,
+    "bluem": #006eff,
+    "background": #E6E6E6,
+);
+
+$shadows:(
+    "shadowcartcontainer": 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ),
+    "shadowcontainer": 0 12px 16px rgba(0, 0, 0, 0.5),
+    "shadowbutton":  2px 2px 3px rgba( 31, 38, 135, 0.5 ),
+    "shadowbuycontainer":  0 8px 10px 0 rgba( 31, 38, 135, 0.37 ),
+    "shadowbuybuttonhover":  0 8px 32px 0 rgba(0, 0, 0, 0.2),
+);
+
+$font-sizes:(
+    "txtxxxs": 1rem,
+    "txtxxs": 1.1rem,
+    "txtxs": 1.25rem,
+    "txts": 1.5rem,
+    "txtm": 1.75rem,
+    "txtl": 2rem,
+    "txtxl": 3rem,
+);

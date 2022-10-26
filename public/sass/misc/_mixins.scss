@@ -1,0 +1,19 @@
+@mixin button{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: map-get($font-sizes , txtxs);
+    font-weight: bold;
+    padding: 5px;
+    color: map-get($colors , secondary);
+    background: #4696ff;
+    box-shadow: map-get($shadows , shadowbutton);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 5px;
+    border-style: none;
+}
+
+@mixin flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

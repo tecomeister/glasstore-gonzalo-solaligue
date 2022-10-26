@@ -47,9 +47,9 @@ const addToCart = async (productId) =>{
     productEraseButton.setAttribute('value', id);
 
     productName.innerText += name;
-    productPrice.innerText += 'Precio: '+price;
+    productPrice.innerText += 'Precio: $'+price;
     productQuantity.innerText += 'Cantidad: '+quantity;
-    productEraseButton.innerText += "Eliminar Producto";
+    productEraseButton.innerText += "Eliminar";
     
     cartContainer.appendChild(cartDiv);
     cartDiv.appendChild(productName);
@@ -84,9 +84,9 @@ const getCart = (cart) =>{
         productEraseButton.setAttribute('value', id);
         
         productName.innerText += name;
-        productPrice.innerText += 'Precio: '+price;
+        productPrice.innerText += 'Precio: $'+price;
         productQuantity.innerText += 'Cantidad: '+quantity;
-        productEraseButton.innerText += "Eliminar Producto";
+        productEraseButton.innerText += "Eliminar";
         
         cartContainer.appendChild(cartDiv);
         cartDiv.appendChild(productName);

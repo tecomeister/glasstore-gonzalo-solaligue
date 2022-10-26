@@ -1,0 +1,34 @@
+.footer{
+    padding-top: map-get($font-sizes , txtxxxs);
+    padding-bottom: map-get($font-sizes , txtxxxs);
+    margin-top: auto;
+    background: map-get($colors , secondary);
+    box-shadow: map-get($shadows , shadowcartcontainer);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    
+    &__ul{
+        @include flex-center;
+        text-align: center;
+        padding-bottom: map-get($font-sizes , txtxxxs);
+    }
+    
+    &__a{
+        padding-left: map-get($font-sizes , txtl);
+        color: map-get($colors , primary);
+        font-size: map-get($font-sizes , txtm);
+        font-weight: 400;
+        text-shadow: 1px 1px 2px map-get($colors , primary)75;
+    }
+    
+    &__mail{
+        @include flex-center;
+        text-align: center;
+        opacity: 0.5;
+        padding-left: map-get($font-sizes , txtl);
+        color: map-get($colors , primary);
+        text-shadow: 1px 1px 2px map-get($colors , primary)75;
+        font-size: map-get($font-sizes , txtm);
+        font-weight: 400;
+    }
+}
