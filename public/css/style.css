@@ -23,6 +23,100 @@ body {
   min-height: 100vh;
   background-color: #E6E6E6; }
 
+.lmodal {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  pointer-events: none;
+  background: #E6E6E6;
+  z-index: 300; }
+  .lmodal__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+    margin: auto;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90%;
+    padding: 3em 2.5em;
+    background: #ffffff;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px; }
+  .lmodal__form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap; }
+  .lmodal__title {
+    font-size: x-large;
+    color: #000000;
+    margin-bottom: 30px; }
+  .lmodal__desc {
+    font-size: large;
+    color: #000000;
+    margin-bottom: 5px; }
+  .lmodal__error {
+    font-size: large;
+    color: crimson;
+    margin-bottom: 5px; }
+  .lmodal__input {
+    font-family: 'Ubuntu', sans-serif;
+    padding: 5px;
+    color: #000000;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 5px;
+    border-style: none;
+    margin-bottom: 15px; }
+  .lmodal__submit {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 5px;
+    color: #ffffff;
+    background: #4696ff;
+    box-shadow: 2px 2px 3px rgba(31, 38, 135, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 5px;
+    border-style: none;
+    margin-bottom: 15px;
+    transition: background .3s;
+    margin-top: 5px;
+    transition: all 0.5s; }
+  .lmodal__submit:hover {
+    background: #006eff;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2); }
+  .lmodal__close {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 5px;
+    color: #ffffff;
+    background: #4696ff;
+    box-shadow: 2px 2px 3px rgba(31, 38, 135, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 5px;
+    border-style: none;
+    transition: all 0.5s; }
+  .lmodal__close:hover {
+    background: #006eff;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2); }
+
+.lmodal--show {
+  opacity: 1;
+  pointer-events: unset; }
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -110,99 +204,6 @@ body {
     text-shadow: 1px 1px 2px #000000 75;
     font-size: 1.75rem;
     font-weight: 400; }
-
-.lmodal {
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 150; }
-  .lmodal__container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-flow: column wrap;
-    margin: auto;
-    width: 90%;
-    max-width: 600px;
-    max-height: 90%;
-    padding: 3em 2.5em;
-    background: #ffffff;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border-radius: 10px; }
-  .lmodal__form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-flow: column wrap; }
-  .lmodal__title {
-    font-size: x-large;
-    color: #000000;
-    margin-bottom: 30px; }
-  .lmodal__desc {
-    font-size: large;
-    color: #000000;
-    margin-bottom: 5px; }
-  .lmodal__error {
-    font-size: large;
-    color: crimson;
-    margin-bottom: 5px; }
-  .lmodal__input {
-    font-family: 'Ubuntu', sans-serif;
-    padding: 5px;
-    color: #000000;
-    background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border-radius: 5px;
-    border-style: none;
-    margin-bottom: 15px; }
-  .lmodal__submit {
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 1.25rem;
-    font-weight: bold;
-    padding: 5px;
-    color: #ffffff;
-    background: #4696ff;
-    box-shadow: 2px 2px 3px rgba(31, 38, 135, 0.5);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border-radius: 5px;
-    border-style: none;
-    margin-bottom: 15px;
-    transition: background .3s;
-    margin-top: 5px;
-    transition: all 0.5s; }
-  .lmodal__submit:hover {
-    background: #006eff;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2); }
-  .lmodal__close {
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 1.25rem;
-    font-weight: bold;
-    padding: 5px;
-    color: #ffffff;
-    background: #4696ff;
-    box-shadow: 2px 2px 3px rgba(31, 38, 135, 0.5);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border-radius: 5px;
-    border-style: none;
-    transition: all 0.5s; }
-  .lmodal__close:hover {
-    background: #006eff;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2); }
-
-.lmodal--show {
-  opacity: 1;
-  pointer-events: unset; }
 
 .cmodal {
   display: flex;
